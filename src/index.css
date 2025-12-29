@@ -1,0 +1,224 @@
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- Main Background Colors (NOW WHITE) --- */
+    --background: 0 0% 100%;      /* White Background */
+    --foreground: 240 10% 4%;     /* Dark Text (almost black) */
+
+    --card: 0 0% 100%;            /* White Card Background */
+    --card-foreground: 240 10% 4%; /* Dark Card Text */
+
+    --popover: 0 0% 98%;          /* Very light grey popover/tooltip background */
+    --popover-foreground: 240 10% 4%; /* Dark popover text */
+
+    /* --- YOUR NEW THEME: BABY BLUE & WHITE --- */
+    
+    /* Baby Blue Main Color */
+    --primary: 195 90% 70%;       /* Baby Blue */
+    --primary-foreground: 240 10% 4%; /* Dark text on the light blue button for readability */
+
+    /* Secondary / Accents (Adjusted to light theme) */
+    --secondary: 240 0% 95%;      /* Light Gray secondary background */
+    --secondary-foreground: 195 90% 70%; /* Baby blue text on secondary */
+
+    --muted: 240 5% 90%;          /* Light Muted Background */
+    --muted-foreground: 240 5% 45%; /* Medium Dark Muted Text */
+
+    /* White Accent */
+    --accent: 0 0% 100%;          /* Pure White Accent */
+    --accent-foreground: 240 10% 4%; /* Dark accent text */
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border/Input (Adjusted to light theme) */
+    --border: 240 5% 85%;         /* Light gray border */
+    --input: 240 0% 95%;          /* Light gray input background */
+    --ring: 195 90% 70%;          /* Baby Blue Ring */
+
+    --radius: 0.75rem;
+
+    /* Sidebar specific (Adjusted to light theme) */
+    --sidebar-background: 0 0% 98%; /* Near white sidebar background */
+    --sidebar-foreground: 240 10% 20%; /* Darker sidebar text */
+    --sidebar-primary: 195 90% 70%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 0% 95%;
+    --sidebar-accent-foreground: 195 90% 70%;
+    --sidebar-border: 240 5% 85%;
+    --sidebar-ring: 195 90% 70%;
+
+    /* --- Custom Gradient Tokens (Baby Blue to White) --- */
+    --celebque-gradient-start: 195 90% 70%; /* Baby Blue */
+    --celebque-gradient-end: 0 0% 100%;     /* White */
+    --celebque-glow: 195 90% 70%;           /* Baby Blue Glow */
+    
+    /* Surface colors adjusted for light theme */
+    --celebque-surface: 0 0% 100%;
+    --celebque-surface-elevated: 0 0% 95%;
+    --celebque-text-muted: 240 5% 45%;
+  }
+  
+  /* The .dark block has been removed to enforce the light theme by default */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--celebque-gradient-start)), hsl(var(--celebque-gradient-end)));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--celebque-gradient-start)), hsl(var(--celebque-gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(var(--celebque-glow) / 0.3);
+  }
+
+  .glass {
+    background: hsl(var(--celebque-surface) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glass-elevated {
+    background: hsl(var(--celebque-surface-elevated) / 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .snap-y-mandatory {
+    scroll-snap-type: y mandatory;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+
+  .snap-start {
+    scroll-snap-align: start;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--celebque-glow) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--celebque-glow) / 0.4);
+  }
+}
