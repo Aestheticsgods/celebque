@@ -10,9 +10,9 @@ export default function Profile() {
   const userSubscriptions = subscriptions.filter(s => s.userId === user?.id);
 
   const stats = [
-    { label: 'Abonnements', value: userSubscriptions.length, icon: Users },
+    { label: 'Subscriptions', value: userSubscriptions.length, icon: Users },
     { label: 'Likes', value: '1.2K', icon: Heart },
-    { label: 'Posts sauvés', value: 12, icon: Grid },
+    { label: 'Saved posts', value: 12, icon: Grid },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function Profile() {
               {user?.username}
             </h1>
             <p className="text-muted-foreground mt-1">
-              {user?.bio || 'Aucune bio pour le moment'}
+              {user?.bio || 'No bio yet'}
             </p>
           </div>
 
@@ -85,14 +85,14 @@ export default function Profile() {
                 <Star size={32} className="text-primary-foreground" />
               </div>
               <h2 className="font-display font-bold text-xl text-foreground mb-2">
-                Devenez Créateur
+                Become Creator
               </h2>
               <p className="text-muted-foreground text-sm mb-4">
-                Monétisez votre contenu et construisez votre communauté
+                Monetize your content and build your community
               </p>
               <Link to="/become-creator">
                 <Button variant="gradient" size="lg">
-                  Commencer maintenant
+                  Get started
                 </Button>
               </Link>
             </motion.div>
@@ -109,7 +109,7 @@ export default function Profile() {
               <Link to="/creator/dashboard">
                 <Button variant="gradient" size="lg" className="w-full">
                   <Star size={20} className="mr-2" />
-                  Accéder au Dashboard Créateur
+                  Access Creator Dashboard
                 </Button>
               </Link>
             </motion.div>
@@ -118,7 +118,7 @@ export default function Profile() {
           {/* Subscriptions Section */}
           <div>
             <h2 className="font-display font-semibold text-lg text-foreground mb-4">
-              Mes Abonnements
+              My Subscriptions
             </h2>
             {userSubscriptions.length > 0 ? (
               <div className="space-y-3">
@@ -138,11 +138,11 @@ export default function Profile() {
                         {sub.creator.displayName}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Renouvellement: {new Date(sub.endDate).toLocaleDateString('fr-FR')}
+                        Renewal: {new Date(sub.endDate).toLocaleDateString('en-US')}
                       </p>
                     </div>
                     <span className="text-sm text-primary font-medium">
-                      €{sub.creator.subscriptionPrice}/mois
+                      €{sub.creator.subscriptionPrice}/month
                     </span>
                   </Link>
                 ))}
@@ -151,10 +151,10 @@ export default function Profile() {
               <div className="text-center py-8 glass-elevated rounded-xl">
                 <Users size={48} className="text-muted-foreground mx-auto mb-4" />
                 <p className="text-muted-foreground">
-                  Vous n'avez pas encore d'abonnements
+                  You don't have any subscriptions yet
                 </p>
                 <Link to="/discover" className="text-primary text-sm hover:underline mt-2 block">
-                  Découvrir des créateurs
+                  Discover creators
                 </Link>
               </div>
             )}

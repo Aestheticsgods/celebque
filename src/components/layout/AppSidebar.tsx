@@ -23,19 +23,19 @@ import { useAuth } from '@/contexts/AuthContext';
 import { walletBalance } from '@/data/mockData';
 
 const menuItems = [
-  { icon: Home, label: 'Accueil', path: '/home' },
-  { icon: Compass, label: 'Découvrir', path: '/discover' },
+  { icon: Home, label: 'Home', path: '/home' },
+  { icon: Compass, label: 'Discover', path: '/discover' },
   { icon: Bell, label: 'Notifications', path: '/notifications', badge: 2 },
   { icon: MessageCircle, label: 'Messages', path: '/messages', badge: 1 },
   { divider: true },
-  { icon: Star, label: 'Devenir Créateur', path: '/become-creator', highlight: true },
-  { icon: Users, label: 'Abonnements', path: '/subscriptions' },
+  { icon: Star, label: 'Become Creator', path: '/become-creator', highlight: true },
+  { icon: Users, label: 'Subscriptions', path: '/subscriptions' },
   { icon: Gift, label: 'Promotions', path: '/promotions' },
-  { icon: Wallet, label: 'Portefeuille', path: '/wallet', value: `€${walletBalance.toFixed(2)}` },
+  { icon: Wallet, label: 'Wallet', path: '/wallet', value: `€${walletBalance.toFixed(2)}` },
   { divider: true },
-  { icon: User, label: 'Profil', path: '/profile' },
-  { icon: Settings, label: 'Paramètres', path: '/settings' },
-  { icon: Sparkles, label: 'Nouveautés', path: '/whats-new' },
+  { icon: User, label: 'Profile', path: '/profile' },
+  { icon: Settings, label: 'Settings', path: '/settings' },
+  { icon: Sparkles, label: "What's New", path: '/whats-new' },
 ];
 
 export function AppSidebar() {
@@ -140,7 +140,7 @@ export function AppSidebar() {
                       exit={{ opacity: 0 }}
                       className="font-medium"
                     >
-                      Dashboard Créateur
+                      Creator Dashboard
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -211,7 +211,7 @@ export function AppSidebar() {
           isCollapsed ? "justify-center" : ""
         )}>
           <Globe size={20} />
-          {!isCollapsed && <span className="text-sm">Français</span>}
+          {!isCollapsed && <span className="text-sm">English</span>}
         </button>
         
         <button
@@ -222,7 +222,7 @@ export function AppSidebar() {
           )}
         >
           <LogOut size={20} />
-          {!isCollapsed && <span className="text-sm">Se déconnecter</span>}
+          {!isCollapsed && <span className="text-sm">Log out</span>}
         </button>
       </div>
     </motion.aside>

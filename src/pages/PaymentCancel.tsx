@@ -21,23 +21,23 @@ export default function PaymentCancel() {
         </motion.div>
 
         <h1 className="font-display font-bold text-3xl text-foreground mb-4">
-          Paiement annulé
+          Payment canceled
         </h1>
         <p className="text-muted-foreground mb-8">
-          Votre paiement a été annulé. Si vous avez rencontré un problème, n'hésitez pas à réessayer.
+          Your payment was canceled. If you encountered an issue, please try again.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/discover">
             <Button variant="gradient" size="lg">
               <RotateCcw size={20} className="mr-2" />
-              Réessayer
+              Retry
             </Button>
           </Link>
           <Link to="/home">
             <Button variant="secondary" size="lg">
               <Home size={20} className="mr-2" />
-              Retour à l'accueil
+              Back to home
             </Button>
           </Link>
         </div>

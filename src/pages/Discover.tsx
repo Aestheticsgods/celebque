@@ -24,10 +24,10 @@ export default function Discover() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="font-display font-bold text-3xl text-foreground mb-2">
-            Découvrir
+            Discover
           </h1>
           <p className="text-muted-foreground">
-            Explorez les créateurs les plus populaires
+            Explore the most popular creators
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function Discover() {
           <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <Input
             type="text"
-            placeholder="Rechercher un créateur..."
+            placeholder="Search for a creator..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-12"
@@ -48,7 +48,7 @@ export default function Discover() {
           <div className="flex items-center gap-2 mb-4">
             <TrendingUp size={20} className="text-primary" />
             <h2 className="font-display font-semibold text-lg text-foreground">
-              Tendances
+              Trending
             </h2>
           </div>
           <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-2">
@@ -117,10 +117,10 @@ export default function Discover() {
 
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">
-                      {creator.subscriberCount.toLocaleString()} abonnés
+                      {creator.subscriberCount.toLocaleString()} followers
                     </span>
                     <Button size="sm" variant="gradient">
-                      €{creator.subscriptionPrice}/mois
+                      €{creator.subscriptionPrice}/month
                     </Button>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ export default function Discover() {
         {filteredCreators.length === 0 && (
           <div className="text-center py-16 glass-elevated rounded-2xl">
             <Search size={48} className="text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground">Aucun créateur trouvé</p>
+            <p className="text-muted-foreground">No creators found</p>
           </div>
         )}
       </motion.div>

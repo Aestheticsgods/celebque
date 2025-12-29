@@ -25,10 +25,10 @@ export default function Login() {
       if (success) {
         navigate('/home');
       } else {
-        setError('Email ou mot de passe incorrect');
+        setError('Incorrect email or password');
       }
     } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer.');
+      setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -48,7 +48,7 @@ export default function Login() {
             <span className="text-primary-foreground font-display font-bold text-3xl">C</span>
           </div>
           <h1 className="font-display font-bold text-3xl text-foreground">Celebque</h1>
-          <p className="text-muted-foreground mt-2">Connectez-vous à votre compte</p>
+          <p className="text-muted-foreground mt-2">Sign in to your account</p>
         </div>
 
         {/* Form */}
@@ -71,7 +71,7 @@ export default function Login() {
                 <Mail size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder="you@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-12"
@@ -81,7 +81,7 @@ export default function Login() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Mot de passe</label>
+              <label className="text-sm font-medium text-foreground">Password</label>
               <div className="relative">
                 <Lock size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
@@ -107,7 +107,7 @@ export default function Login() {
                 to="/forgot-password"
                 className="text-sm text-primary hover:underline"
               >
-                Mot de passe oublié?
+                Forgot password?
               </Link>
             </div>
 
@@ -118,15 +118,15 @@ export default function Login() {
               className="w-full"
               disabled={isLoading}
             >
-              {isLoading ? 'Connexion...' : 'Se connecter'}
+              {isLoading ? 'Signing in...' : 'Sign in'}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
-              Pas encore de compte?{' '}
+              Don't have an account?{' '}
               <Link to="/signup" className="text-primary font-medium hover:underline">
-                Créer un compte
+                Create account
               </Link>
             </p>
           </div>

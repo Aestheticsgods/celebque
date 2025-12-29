@@ -16,31 +16,31 @@ import { useNavigate } from 'react-router-dom';
 
 const settingsSections = [
   {
-    title: 'Compte',
+    title: 'Account',
     items: [
-      { icon: User, label: 'Informations personnelles', path: '/settings/profile' },
+      { icon: User, label: 'Personal information', path: '/settings/profile' },
       { icon: Bell, label: 'Notifications', path: '/settings/notifications' },
-      { icon: Lock, label: 'Confidentialité et sécurité', path: '/settings/privacy' },
+      { icon: Lock, label: 'Privacy & security', path: '/settings/privacy' },
     ]
   },
   {
-    title: 'Paiement',
+    title: 'Payment',
     items: [
-      { icon: CreditCard, label: 'Méthodes de paiement', path: '/settings/payment' },
+      { icon: CreditCard, label: 'Payment methods', path: '/settings/payment' },
     ]
   },
   {
-    title: 'Préférences',
+    title: 'Preferences',
     items: [
-      { icon: Globe, label: 'Langue', path: '/settings/language', value: 'Français' },
-      { icon: Moon, label: 'Thème', path: '/settings/theme', value: 'Sombre' },
+      { icon: Globe, label: 'Language', path: '/settings/language', value: 'English' },
+      { icon: Moon, label: 'Theme', path: '/settings/theme', value: 'Dark' },
     ]
   },
   {
     title: 'Support',
     items: [
-      { icon: HelpCircle, label: 'Centre d\'aide', path: '/help' },
-      { icon: FileText, label: 'Conditions d\'utilisation', path: '/terms' },
+      { icon: HelpCircle, label: 'Help Center', path: '/help' },
+      { icon: FileText, label: 'Terms of use', path: '/terms' },
     ]
   },
 ];
@@ -117,7 +117,7 @@ export default function Settings() {
                 <LogOut size={20} className="text-destructive" />
               </div>
               <span className="flex-1 text-left font-medium text-destructive">
-                Se déconnecter
+                Log out
               </span>
             </button>
           </motion.div>

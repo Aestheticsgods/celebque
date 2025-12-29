@@ -5,29 +5,29 @@ const updates = [
   {
     id: 1,
     icon: Sparkles,
-    title: 'Nouveau design',
-    description: 'Interface repensée pour une meilleure expérience utilisateur',
+    title: 'New design',
+    description: 'Redesigned interface for a better user experience',
     date: '2024-01-20',
   },
   {
     id: 2,
     icon: Zap,
-    title: 'Feed amélioré',
-    description: 'Découvrez du contenu plus rapidement avec notre nouveau feed style reels',
+    title: 'Improved feed',
+    description: 'Discover content faster with our new reels-style feed',
     date: '2024-01-18',
   },
   {
     id: 3,
     icon: Shield,
-    title: 'Sécurité renforcée',
-    description: 'Authentification à deux facteurs maintenant disponible',
+    title: 'Enhanced security',
+    description: 'Two-factor authentication now available',
     date: '2024-01-15',
   },
   {
     id: 4,
     icon: Star,
-    title: 'Programme Créateur',
-    description: 'Nouveaux outils pour les créateurs: analytics avancés et plus',
+    title: 'Creator Program',
+    description: 'New creator tools: advanced analytics and more',
     date: '2024-01-10',
   },
 ];
@@ -46,10 +46,10 @@ export default function WhatsNew() {
           </div>
           <div>
             <h1 className="font-display font-bold text-3xl text-foreground">
-              Nouveautés
+              What's New
             </h1>
             <p className="text-muted-foreground">
-              Dernières mises à jour de Celebque
+              Latest updates from Celebque
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function WhatsNew() {
                         {update.title}
                       </h3>
                       <span className="text-xs text-muted-foreground">
-                        {new Date(update.date).toLocaleDateString('fr-FR')}
+                        {new Date(update.date).toLocaleDateString('en-US')}
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground">

@@ -18,9 +18,9 @@ export default function CreatorProfile() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-foreground mb-4">Créateur non trouvé</h1>
+          <h1 className="text-2xl font-bold text-foreground mb-4">Creator not found</h1>
           <Link to="/discover" className="text-primary hover:underline">
-            Retour à la découverte
+            Back to discover
           </Link>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function CreatorProfile() {
 
   const handleSubscribe = () => {
     // TODO: Implement Stripe checkout
-    toast.info('Redirection vers le paiement...');
+    toast.info('Redirecting to payment...');
     // Mock redirect to success
     setTimeout(() => {
       window.location.href = '/success';
@@ -88,11 +88,11 @@ export default function CreatorProfile() {
                 onClick={handleSubscribe}
                 className="w-full lg:w-auto"
               >
-                S'abonner - €{creator.subscriptionPrice}/mois
+                Subscribe - €{creator.subscriptionPrice}/month
               </Button>
             ) : (
               <Button variant="secondary" size="lg" className="w-full lg:w-auto">
-                Abonné ✓
+                Subscribed ✓
               </Button>
             )}
           </div>
@@ -106,7 +106,7 @@ export default function CreatorProfile() {
               <p className="font-display font-bold text-xl text-foreground">
                 {creator.subscriberCount.toLocaleString()}
               </p>
-              <p className="text-sm text-muted-foreground">Abonnés</p>
+              <p className="text-sm text-muted-foreground">Followers</p>
             </div>
             <div className="text-center">
               <p className="font-display font-bold text-xl text-foreground">
@@ -145,7 +145,7 @@ export default function CreatorProfile() {
                   <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center">
                     <div className="text-center">
                       <Lock size={32} className="text-muted-foreground mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Réservé aux abonnés</p>
+                      <p className="text-sm text-muted-foreground">Subscribers only</p>
                     </div>
                   </div>
                 )}

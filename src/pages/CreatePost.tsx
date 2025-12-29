@@ -30,7 +30,7 @@ export default function CreatePost() {
     e.preventDefault();
     
     if (!mediaPreview) {
-      toast.error('Veuillez ajouter une image ou une vidéo');
+      toast.error('Please add an image or a video');
       return;
     }
 
@@ -39,7 +39,7 @@ export default function CreatePost() {
     // TODO: Implement actual post creation
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    toast.success('Post publié avec succès!');
+    toast.success('Post published successfully!');
     navigate('/creator/dashboard');
   };
 
@@ -59,7 +59,7 @@ export default function CreatePost() {
             <ArrowLeft size={24} className="text-foreground" />
           </button>
           <h1 className="font-display font-bold text-2xl text-foreground">
-            Nouveau Post
+            New Post
           </h1>
         </div>
 
@@ -67,7 +67,7 @@ export default function CreatePost() {
           {/* Media Upload */}
           <div className="glass-elevated rounded-2xl p-6">
             <label className="text-sm font-medium text-foreground mb-4 block">
-              Média
+              Media
             </label>
             
             {!mediaPreview ? (
@@ -77,17 +77,17 @@ export default function CreatePost() {
                     <Upload size={32} className="text-primary" />
                   </div>
                   <p className="text-foreground font-medium mb-2">
-                    Glissez ou cliquez pour ajouter
+                    Drag or click to add
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Images ou vidéos jusqu'à 50MB
+                    Images or videos up to 50MB
                   </p>
                   <div className="flex items-center gap-4 mt-4">
                     <span className="flex items-center gap-1 text-sm text-muted-foreground">
                       <Image size={16} /> Images
                     </span>
                     <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Video size={16} /> Vidéos
+                      <Video size={16} /> Videos
                     </span>
                   </div>
                 </div>
@@ -129,10 +129,10 @@ export default function CreatePost() {
           {/* Caption */}
           <div className="glass-elevated rounded-2xl p-6">
             <label className="text-sm font-medium text-foreground mb-4 block">
-              Légende
+              Caption
             </label>
             <textarea
-              placeholder="Décrivez votre post..."
+              placeholder="Describe your post..."
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               rows={4}
@@ -143,7 +143,7 @@ export default function CreatePost() {
           {/* Visibility */}
           <div className="glass-elevated rounded-2xl p-6">
             <label className="text-sm font-medium text-foreground mb-4 block">
-              Visibilité
+              Visibility
             </label>
             <div className="grid grid-cols-2 gap-4">
               <button
@@ -163,8 +163,8 @@ export default function CreatePost() {
                   <Globe size={20} className={visibility === 'free' ? "text-primary" : "text-muted-foreground"} />
                 </div>
                 <div className="text-left">
-                  <p className="font-medium text-foreground">Gratuit</p>
-                  <p className="text-xs text-muted-foreground">Visible par tous</p>
+                  <p className="font-medium text-foreground">Free</p>
+                  <p className="text-xs text-muted-foreground">Visible to everyone</p>
                 </div>
               </button>
               
@@ -185,8 +185,8 @@ export default function CreatePost() {
                   <Lock size={20} className={visibility === 'subscribers' ? "text-primary" : "text-muted-foreground"} />
                 </div>
                 <div className="text-left">
-                  <p className="font-medium text-foreground">Abonnés uniquement</p>
-                  <p className="text-xs text-muted-foreground">Contenu exclusif</p>
+                  <p className="font-medium text-foreground">Subscribers only</p>
+                  <p className="text-xs text-muted-foreground">Exclusive content</p>
                 </div>
               </button>
             </div>
@@ -200,7 +200,7 @@ export default function CreatePost() {
             className="w-full"
             disabled={isLoading}
           >
-            {isLoading ? 'Publication...' : 'Publier'}
+            {isLoading ? 'Publishing...' : 'Publish'}
           </Button>
         </form>
       </motion.div>

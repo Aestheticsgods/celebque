@@ -18,9 +18,9 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const passwordRequirements = [
-    { label: '8 caractères minimum', met: password.length >= 8 },
-    { label: 'Une lettre majuscule', met: /[A-Z]/.test(password) },
-    { label: 'Un chiffre', met: /[0-9]/.test(password) },
+    { label: 'Minimum 8 characters', met: password.length >= 8 },
+    { label: 'One uppercase letter', met: /[A-Z]/.test(password) },
+    { label: 'One number', met: /[0-9]/.test(password) },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,12 +28,12 @@ export default function Signup() {
     setError('');
 
     if (password !== confirmPassword) {
-      setError('Les mots de passe ne correspondent pas');
+      setError('Passwords do not match');
       return;
     }
 
     if (!passwordRequirements.every(req => req.met)) {
-      setError('Le mot de passe ne respecte pas les critères requis');
+      setError('Password does not meet the required criteria');
       return;
     }
 
@@ -44,10 +44,10 @@ export default function Signup() {
       if (success) {
         navigate('/home');
       } else {
-        setError('Une erreur est survenue lors de l\'inscription');
+        setError('An error occurred during signup');
       }
     } catch (err) {
-      setError('Une erreur est survenue. Veuillez réessayer.');
+      setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -66,8 +66,8 @@ export default function Signup() {
           <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center mx-auto mb-4 glow-primary">
             <span className="text-primary-foreground font-display font-bold text-3xl">C</span>
           </div>
-          <h1 className="font-display font-bold text-3xl text-foreground">Rejoignez Celebque</h1>
-          <p className="text-muted-foreground mt-2">Créez votre compte gratuitement</p>
+          <h1 className="font-display font-bold text-3xl text-foreground">Join Celebque</h1>
+          <p className="text-muted-foreground mt-2">Create your free account</p>
         </div>
 
         {/* Form */}
@@ -90,7 +90,7 @@ export default function Signup() {
                 <Mail size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="email"
-                  placeholder="votre@email.com"
+                  placeholder="you@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-12"
@@ -100,7 +100,7 @@ export default function Signup() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Mot de passe</label>
+              <label className="text-sm font-medium text-foreground">Password</label>
               <div className="relative">
                 <Lock size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
@@ -137,7 +137,7 @@ export default function Signup() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Confirmer le mot de passe</label>
+              <label className="text-sm font-medium text-foreground">Confirm password</label>
               <div className="relative">
                 <Lock size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
@@ -165,15 +165,15 @@ export default function Signup() {
               className="w-full"
               disabled={isLoading}
             >
-              {isLoading ? 'Création du compte...' : 'Créer un compte'}
+              {isLoading ? 'Creating account...' : 'Create account'}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
-              Déjà un compte?{' '}
+              Already have an account?{' '}
               <Link to="/login" className="text-primary font-medium hover:underline">
-                Se connecter
+                Log in
               </Link>
             </p>
           </div>

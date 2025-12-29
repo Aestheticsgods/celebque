@@ -4,10 +4,10 @@ import { Button } from '@/components/ui/button';
 import { walletBalance } from '@/data/mockData';
 
 const transactions = [
-  { id: 1, type: 'credit', description: 'Dépôt', amount: 50, date: '2024-01-20' },
-  { id: 2, type: 'debit', description: 'Abonnement - Sophie Laurent', amount: -9.99, date: '2024-01-15' },
-  { id: 3, type: 'debit', description: 'Abonnement - Lucas Martin', amount: -12.99, date: '2024-01-10' },
-  { id: 4, type: 'credit', description: 'Dépôt', amount: 100, date: '2024-01-05' },
+  { id: 1, type: 'credit', description: 'Deposit', amount: 50, date: '2024-01-20' },
+  { id: 2, type: 'debit', description: 'Subscription - Sophie Laurent', amount: -9.99, date: '2024-01-15' },
+  { id: 3, type: 'debit', description: 'Subscription - Lucas Martin', amount: -12.99, date: '2024-01-10' },
+  { id: 4, type: 'credit', description: 'Deposit', amount: 100, date: '2024-01-05' },
 ];
 
 export default function Wallet() {

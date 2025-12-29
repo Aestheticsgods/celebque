@@ -47,14 +47,14 @@ export function ReelCard({ post, isActive = false }: ReelCardProps) {
                 <Lock size={32} className="text-muted-foreground" />
               </div>
               <h3 className="font-display font-semibold text-lg text-foreground mb-2">
-                Contenu réservé aux abonnés
+                Subscribers-only content
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Abonnez-vous pour accéder à ce contenu exclusif
+                Subscribe to access this exclusive content
               </p>
               <Link to={`/creators/${post.creatorId}`}>
                 <Button className="gradient-primary">
-                  S'abonner - €{post.creator.subscriptionPrice}/mois
+                  Subscribe - €{post.creator.subscriptionPrice}/month
                 </Button>
               </Link>
             </div>
@@ -91,7 +91,7 @@ export function ReelCard({ post, isActive = false }: ReelCardProps) {
               variant="secondary"
               className="bg-primary/20 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground"
             >
-              Suivre
+              Follow
             </Button>
           </Link>
 
@@ -135,7 +135,7 @@ export function ReelCard({ post, isActive = false }: ReelCardProps) {
               <Share2 size={24} />
             </div>
             <span className="text-xs text-foreground font-medium">
-              Partager
+              Share
             </span>
           </button>
         </div>

@@ -8,7 +8,7 @@ export function SuggestedCreators() {
   return (
     <aside className="hidden xl:block w-80 fixed right-0 top-0 h-screen bg-card/50 border-l border-border p-6 overflow-y-auto">
       <h2 className="font-display font-semibold text-lg text-foreground mb-6">
-        Créateurs suggérés
+        Suggested creators
       </h2>
       
       <div className="space-y-4">
@@ -46,7 +46,7 @@ export function SuggestedCreators() {
               
               <div className="mt-3 flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">
-                  {creator.subscriberCount.toLocaleString()} abonnés
+                  {creator.subscriberCount.toLocaleString()} followers
                 </span>
                 <Button
                   size="sm"
@@ -54,7 +54,7 @@ export function SuggestedCreators() {
                   className="h-7 text-xs hover:bg-primary hover:text-primary-foreground"
                   onClick={(e) => e.preventDefault()}
                 >
-                  Suivre
+                  Follow
                 </Button>
               </div>
             </Link>
@@ -67,7 +67,7 @@ export function SuggestedCreators() {
           to="/discover"
           className="text-sm text-primary hover:underline"
         >
-          Voir plus de créateurs →
+          See more creators →
         </Link>
       </div>
     </aside>

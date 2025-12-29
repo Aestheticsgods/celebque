@@ -9,7 +9,7 @@ const promotions = [
     creator: creators[0],
     discount: 50,
     originalPrice: 9.99,
-    description: 'Premier mois à -50%',
+    description: 'First month 50% off',
     expiresAt: '2024-02-01',
   },
   {
@@ -17,7 +17,7 @@ const promotions = [
     creator: creators[3],
     discount: 30,
     originalPrice: 12.99,
-    description: 'Offre de lancement',
+    description: 'Introductory offer',
     expiresAt: '2024-01-31',
   },
 ];
@@ -43,7 +43,7 @@ export default function Promotions() {
               Promotions
             </h1>
             <p className="text-muted-foreground">
-              Offres exclusives limitées dans le temps
+              Limited-time exclusive offers
             </p>
           </div>
         </div>
@@ -95,12 +95,12 @@ export default function Promotions() {
                     <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
                       <Clock size={14} />
                       <span>
-                        Expire le {new Date(promo.expiresAt).toLocaleDateString('fr-FR')}
+                        Expires on {new Date(promo.expiresAt).toLocaleDateString('en-US')}
                       </span>
                     </div>
                   </div>
                   <Button variant="gradient">
-                    Profiter de l'offre
+                    Get the deal
                   </Button>
                 </div>
               </motion.div>
@@ -110,10 +110,10 @@ export default function Promotions() {
           <div className="text-center py-16 glass-elevated rounded-2xl">
             <Gift size={48} className="text-muted-foreground mx-auto mb-4" />
             <h2 className="font-semibold text-lg text-foreground mb-2">
-              Aucune promotion active
+              No active promotions
             </h2>
             <p className="text-muted-foreground">
-              Revenez plus tard pour découvrir des offres exclusives
+              Come back later to discover exclusive deals
             </p>
           </div>
         )}

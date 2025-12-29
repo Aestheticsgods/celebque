@@ -21,23 +21,23 @@ export default function PaymentSuccess() {
         </motion.div>
 
         <h1 className="font-display font-bold text-3xl text-foreground mb-4">
-          Paiement réussi!
+          Payment successful!
         </h1>
         <p className="text-muted-foreground mb-8">
-          Votre abonnement a été activé avec succès. Vous avez maintenant accès à tout le contenu exclusif.
+          Your subscription has been activated successfully. You now have access to all exclusive content.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/home">
             <Button variant="gradient" size="lg">
               <Home size={20} className="mr-2" />
-              Retour à l'accueil
+              Back to home
             </Button>
           </Link>
           <Link to="/subscriptions">
             <Button variant="secondary" size="lg">
               <User size={20} className="mr-2" />
-              Mes abonnements
+              My subscriptions
             </Button>
           </Link>
         </div>

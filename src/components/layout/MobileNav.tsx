@@ -4,11 +4,11 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 const navItems = [
-  { icon: Home, label: 'Accueil', path: '/home' },
-  { icon: Compass, label: 'Découvrir', path: '/discover' },
+  { icon: Home, label: 'Home', path: '/home' },
+  { icon: Compass, label: 'Discover', path: '/discover' },
   { icon: Bell, label: 'Notifications', path: '/notifications', badge: 2 },
   { icon: MessageCircle, label: 'Messages', path: '/messages', badge: 1 },
-  { icon: User, label: 'Profil', path: '/profile' },
+  { icon: User, label: 'Profile', path: '/profile' },
 ];
 
 export function MobileNav() {

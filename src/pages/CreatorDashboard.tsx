@@ -20,7 +20,7 @@ export default function CreatorDashboard() {
 
   const stats = [
     { 
-      label: 'Abonnés', 
+      label: 'Followers', 
       value: creator.subscriberCount.toLocaleString(), 
       icon: Users,
       change: '+12%',
@@ -60,16 +60,16 @@ export default function CreatorDashboard() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="font-display font-bold text-3xl text-foreground">
-              Dashboard Créateur
+              Creator Dashboard
             </h1>
             <p className="text-muted-foreground mt-1">
-              Bienvenue, {creator.displayName}!
+              Welcome, {creator.displayName}!
             </p>
           </div>
           <Link to="/creator/posts/new">
             <Button variant="gradient">
               <Plus size={20} className="mr-2" />
-              Créer un post
+              Create post
             </Button>
           </Link>
         </div>
@@ -107,10 +107,10 @@ export default function CreatorDashboard() {
         <div className="glass-elevated rounded-2xl p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="font-display font-semibold text-xl text-foreground">
-              Mes Posts
+              My Posts
             </h2>
             <Link to="/creator/posts" className="text-sm text-primary hover:underline">
-              Voir tout
+              See all
             </Link>
           </div>
 
@@ -142,10 +142,10 @@ export default function CreatorDashboard() {
                         ? 'bg-green-500/20 text-green-400' 
                         : 'bg-primary/20 text-primary'
                     }`}>
-                      {post.visibility === 'free' ? 'Gratuit' : (
+                      {post.visibility === 'free' ? 'Free' : (
                         <span className="flex items-center gap-1">
                           <Lock size={10} />
-                          Abonnés
+                          Subscribers
                         </span>
                       )}
                     </span>
@@ -162,12 +162,12 @@ export default function CreatorDashboard() {
             <div className="text-center py-12">
               <FileImage size={48} className="text-muted-foreground mx-auto mb-4" />
               <p className="text-muted-foreground mb-4">
-                Vous n'avez pas encore de posts
+                You don't have any posts yet
               </p>
               <Link to="/creator/posts/new">
                 <Button variant="gradient">
                   <Plus size={20} className="mr-2" />
-                  Créer votre premier post
+                  Create your first post
                 </Button>
               </Link>
             </div>

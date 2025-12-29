@@ -17,10 +17,10 @@ export default function Subscriptions() {
         className="max-w-2xl mx-auto"
       >
         <h1 className="font-display font-bold text-3xl text-foreground mb-2">
-          Mes Abonnements
+          My Subscriptions
         </h1>
         <p className="text-muted-foreground mb-8">
-          Gérez vos abonnements aux créateurs
+          Manage your creator subscriptions
         </p>
 
         {userSubscriptions.length > 0 ? (
@@ -61,15 +61,15 @@ export default function Subscriptions() {
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar size={16} />
                     <span>
-                      Renouvellement: {new Date(subscription.endDate).toLocaleDateString('fr-FR')}
+                      Renewal: {new Date(subscription.endDate).toLocaleDateString('en-US')}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium text-foreground">
-                      €{subscription.creator.subscriptionPrice}/mois
+                      €{subscription.creator.subscriptionPrice}/month
                     </span>
                     <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive">
-                      Annuler
+                      Cancel
                     </Button>
                   </div>
                 </div>
@@ -80,14 +80,14 @@ export default function Subscriptions() {
           <div className="text-center py-16 glass-elevated rounded-2xl">
             <Users size={48} className="text-muted-foreground mx-auto mb-4" />
             <h2 className="font-semibold text-lg text-foreground mb-2">
-              Aucun abonnement
+              No subscriptions
             </h2>
             <p className="text-muted-foreground mb-6">
-              Découvrez des créateurs et abonnez-vous pour accéder à leur contenu exclusif
+              Discover creators and subscribe to access their exclusive content
             </p>
             <Link to="/discover">
               <Button variant="gradient">
-                Découvrir des créateurs
+                Discover creators
               </Button>
             </Link>
           </div>

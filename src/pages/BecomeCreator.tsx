@@ -16,9 +16,9 @@ export default function BecomeCreator() {
   const navigate = useNavigate();
 
   const benefits = [
-    { icon: DollarSign, title: 'Monétisez votre contenu', description: 'Gagnez de l\'argent avec vos créations' },
-    { icon: Users, title: 'Créez votre communauté', description: 'Connectez-vous avec vos fans' },
-    { icon: Sparkles, title: 'Contenu exclusif', description: 'Partagez du contenu réservé à vos abonnés' },
+    { icon: DollarSign, title: 'Monetize your content', description: 'Earn money from your creations' },
+    { icon: Users, title: 'Build your community', description: 'Connect with your fans' },
+    { icon: Sparkles, title: 'Exclusive content', description: 'Share content reserved for your subscribers' },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,11 +28,11 @@ export default function BecomeCreator() {
     try {
       const success = await upgradeToCreator(displayName, bio, parseFloat(price));
       if (success) {
-        toast.success('Félicitations! Vous êtes maintenant un créateur!');
+        toast.success('Congratulations! You are now a creator!');
         navigate('/creator/dashboard');
       }
     } catch (err) {
-      toast.error('Une erreur est survenue');
+      toast.error('An error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -61,10 +61,10 @@ export default function BecomeCreator() {
             <Star size={40} className="text-primary-foreground" />
           </motion.div>
           <h1 className="font-display font-bold text-4xl text-foreground mb-4">
-            Devenez <span className="gradient-text">Créateur</span>
+            Become <span className="gradient-text">Creator</span>
           </h1>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            Transformez votre passion en revenus et rejoignez notre communauté de créateurs
+            Turn your passion into income and join our creator community
           </p>
         </div>
 
@@ -98,16 +98,16 @@ export default function BecomeCreator() {
           className="glass-elevated rounded-2xl p-8"
         >
           <h2 className="font-display font-semibold text-xl text-foreground mb-6">
-            Configurez votre profil créateur
+            Set up your creator profile
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">
-                Nom d'affichage
+                Display name
               </label>
               <Input
-                placeholder="Votre nom de créateur"
+                placeholder="Your creator name"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
                 required
@@ -119,7 +119,7 @@ export default function BecomeCreator() {
                 Bio
               </label>
               <textarea
-                placeholder="Décrivez-vous et votre contenu..."
+                placeholder="Describe yourself and your content..."
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
                 rows={4}
@@ -147,7 +147,7 @@ export default function BecomeCreator() {
                 />
               </div>
               <p className="text-xs text-muted-foreground">
-                Vous pouvez modifier ce prix à tout moment
+                You can change this price anytime
               </p>
             </div>
 
@@ -159,9 +159,9 @@ export default function BecomeCreator() {
                 className="w-full"
                 disabled={isLoading}
               >
-                {isLoading ? 'Création en cours...' : (
+                {isLoading ? 'Creating...' : (
                   <>
-                    Devenir Créateur
+                    Become Creator
                     <ArrowRight size={20} className="ml-2" />
                   </>
                 )}

@@ -25,7 +25,7 @@ export default function Notifications() {
     const diff = now.getTime() - date.getTime();
     const hours = Math.floor(diff / (1000 * 60 * 60));
     
-    if (hours < 1) return 'À l\'instant';
+    if (hours < 1) return 'Just now';
     if (hours < 24) return `Il y a ${hours}h`;
     return date.toLocaleDateString('fr-FR');
   };
