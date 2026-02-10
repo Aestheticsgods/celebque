@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   poweredByHeader: false,
   compress: true,
-  swcMinify: true,
   headers: async () => {
     return [
       {
